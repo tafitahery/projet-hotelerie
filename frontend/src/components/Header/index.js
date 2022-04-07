@@ -1,16 +1,38 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import styled from 'styled-components';
+
+const StyledNav = styled.nav`
+  background: #6666d9;
+  padding: 10;
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+`;
+
+const StyledLink = styled(Link)`
+  font-size: 1.3rem;
+  color: white;
+  text-decoration: none;
+  transition: 0.3s;
+  &:hover {
+    text-decoration: underline;
+    color: #464545;
+  }
+`;
 
 const Header = () => {
   return (
-    <nav>
-      <Link to="/">Réservation</Link>
-      <Link to="/listes_reservations">Listes des réservations</Link>
-      <Link to="#">Création client</Link>
-      <Link to="#">Listes des clients</Link>
-      <Link to="#">Création chambre</Link>
-      <Link to="#">Listes des chambres</Link>
-    </nav>
+    <StyledNav>
+      <StyledLink to="/">Réservation</StyledLink>
+      <StyledLink to="/listes_reservations">Listes des réservations</StyledLink>
+      <StyledLink to="#">Création client</StyledLink>
+      <StyledLink to="#">Listes des clients</StyledLink>
+      <StyledLink to="#">Création chambre</StyledLink>
+      <StyledLink to="#">Listes des chambres</StyledLink>
+    </StyledNav>
   );
 };
 

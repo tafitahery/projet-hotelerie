@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import colors from '../../utils/styles/colors';
 
 const StyledNav = styled.nav`
-  background: #6666d9;
+  background: ${colors.primary};
   padding: 10;
   padding: 20px;
   border-radius: 10px;
@@ -14,12 +15,10 @@ const StyledNav = styled.nav`
 
 const StyledLink = styled(Link)`
   font-size: 1.3rem;
-  color: white;
+  color: ${colors.third};
   text-decoration: none;
-  transition: 0.3s;
   &:hover {
     text-decoration: underline;
-    color: #464545;
   }
 `;
 

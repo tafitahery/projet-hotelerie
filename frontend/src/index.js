@@ -4,11 +4,27 @@ import Home from './pages/Home';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Reservation from './pages/Reservation';
 import Header from './components/Header';
+import { createGlobalStyle } from 'styled-components';
+import colors from './utils/styles/colors';
+import FontStyles from './utils/styles/fonts';
 
+const GlobalStyle = createGlobalStyle`
+  body {
+    font-family: 'font1';
+  }
+  h1 {
+    color: ${colors.secondary};
+    font-family: 'font2';
+    text-align: center;
+    text-transform: uppercase;
+  }
+`;
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
   <BrowserRouter>
+    <FontStyles />
+    <GlobalStyle />
     <Header />
     <Routes>
       <Route path="/" element={<Home />} />

@@ -19,7 +19,8 @@ const GlobalStyle = createGlobalStyle`
     text-transform: uppercase;
     border: 1px solid ${colors.secondary};
     background-color: ${colors.secondary};
-    border-radius: 10px;
+    margin-top: 0;
+    border-radius : 10px 10px 0 0;
 }
   }
 `;

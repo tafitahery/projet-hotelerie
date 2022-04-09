@@ -13,10 +13,14 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'font1';
   }
   h1 {
-    color: ${colors.secondary};
+    color: ${colors.primary};
     font-family: 'font2';
     text-align: center;
     text-transform: uppercase;
+    border: 1px solid ${colors.secondary};
+    background-color: ${colors.secondary};
+    border-radius: 10px;
+}
   }
 `;
 const root = ReactDOM.createRoot(document.getElementById('root'));

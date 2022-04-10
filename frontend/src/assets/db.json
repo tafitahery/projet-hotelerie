@@ -6,7 +6,22 @@
       "prenom": "Tafita",
       "adresse": "Tana",
       "cin": "118331024984",
-      "Telephone": "0345267580"
+      "telephone": "0345267580"
+    },
+    {
+      "nom": "HERINANTENAINA",
+      "prenom": "Tafita",
+      "adresse": "67HA",
+      "cin": "122333244900",
+      "telephone": "0234577688",
+      "id": 2
+    }
+  ],
+  "chambres": [
+    {
+      "id": 1,
+      "numero": "1",
+      "prix": 50000
     }
   ]
 }

@@ -40,9 +40,19 @@ const globalStyle = createGlobalStyle`
     font-size: 1.3rem;
     height: 40px;
   }
+  .btn-valider {
+    border-radius: 10px;
+    color: ${colors.primary};
+    transition: 0.3s;
+    &:hover {
+      cursor: pointer;
+      background-color: ${colors.primary};
+      color: ${colors.third};
+    }
+  }
   .informations {
     border: 1px solid ${colors.primary};
-    margin: 20px;
+    margin: 40px;
     border-radius: 10px;
   }
   h2 {

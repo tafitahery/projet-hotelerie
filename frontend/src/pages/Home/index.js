@@ -1,11 +1,11 @@
 import React from 'react';
 
-const handleSubmit = (e) => {
-  e.preventDefault();
-  console.log('Validé');
-};
-
 const Home = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log('Validé');
+  };
+
   return (
     <div className="container">
       <h1>Réservation</h1>
@@ -32,7 +32,7 @@ const Home = () => {
             </select>
           </div>
           <div className="input">
-            <input type="submit" value="Valider" />
+            <input type="submit" value="Valider" className="btn-valider" />
           </div>
         </form>
 

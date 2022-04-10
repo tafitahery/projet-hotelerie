@@ -21,7 +21,28 @@ const GlobalStyle = createGlobalStyle`
     background-color: ${colors.secondary};
     margin-top: 0;
     border-radius : 10px 10px 0 0;
-}
+  }
+  form {
+    margin: 20px;
+  }
+  }
+  .container {
+    margin-top: 50px;
+    border: 1px solid ${colors.secondary};
+    border-radius: 10px;
+  }
+  .input {
+    margin: 20px;
+  }
+  label {
+    color: ${colors.primary};
+    font-size: 1.3rem;
+    display: inline-block;
+    width: 300px;
+  }
+  input, select {
+    font-size: 1.3rem;
+    height: 40px;
   }
 `;
 const root = ReactDOM.createRoot(document.getElementById('root'));

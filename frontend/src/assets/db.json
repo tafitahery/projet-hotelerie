@@ -1,0 +1,12 @@
+{
+  "clients": [
+    {
+      "id": 1,
+      "nom": "HERY",
+      "prenom": "Tafita",
+      "adresse": "Tana",
+      "cin": "118331024984",
+      "Telephone": "0345267580"
+    }
+  ]
+}

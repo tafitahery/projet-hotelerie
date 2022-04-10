@@ -26,8 +26,8 @@ const Header = () => {
   return (
     <StyledNav>
       <StyledLink to="/">Réservation</StyledLink>
-      <StyledLink to="/listes_reservations">Listes des réservations</StyledLink>
-      <StyledLink to="#">Création client</StyledLink>
+      <StyledLink to="/listes-reservations">Listes des réservations</StyledLink>
+      <StyledLink to="/creation-client">Création client</StyledLink>
       <StyledLink to="#">Listes des clients</StyledLink>
       <StyledLink to="#">Création chambre</StyledLink>
       <StyledLink to="#">Listes des chambres</StyledLink>

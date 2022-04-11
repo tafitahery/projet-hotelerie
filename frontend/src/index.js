@@ -7,6 +7,7 @@ import Header from './components/Header';
 import GlobalStyle from './utils/styles/globalStyle';
 import FontStyles from './utils/styles/fonts';
 import CreateClient from './pages/CreateClient';
+import ListClients from './pages/ListClients';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -19,6 +20,7 @@ root.render(
       <Route path="/" element={<Home />} />
       <Route path="/listes-reservations" element={<Reservation />} />
       <Route path="/creation-client" element={<CreateClient />} />
+      <Route path="/liste-clients" element={<ListClients />} />
     </Routes>
   </BrowserRouter>
 );

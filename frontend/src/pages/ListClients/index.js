@@ -4,6 +4,17 @@ import ShowClients from '../../components/ShowClients';
 import styled from 'styled-components';
 import colors from '../../utils/styles/colors';
 
+const StyledLi = styled.li`
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: 18% 16% 16% 16% 16% 16%;
+  margin: 10px 0;
+  font-size: 1.3rem;
+  color: ${colors.primary};
+  font-family: 'font2';
+  font-weight: bold;
+`;
+
 const ListClients = () => {
   const [clients, setClients] = useState([]);
 
@@ -16,17 +27,6 @@ const ListClients = () => {
       .get('http://localhost:3003/clients')
       .then((res) => setClients(res.data));
   };
-
-  const StyledLi = styled.li`
-    list-style-type: none;
-    display: grid;
-    grid-template-columns: 18% 16% 16% 16% 16% 16%;
-    margin: 10px 0;
-    font-size: 1.3rem;
-    color: ${colors.primary};
-    font-family: 'font2';
-    font-weight: bold;
-  `;
 
   return (
     <div className="container">

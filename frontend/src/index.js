@@ -8,19 +8,25 @@ import GlobalStyle from './utils/styles/globalStyle';
 import FontStyles from './utils/styles/fonts';
 import CreateClient from './pages/CreateClient';
 import ListClients from './pages/ListClients';
+import CreateRoom from './pages/CreateRoom';
+import ListRooms from './pages/ListRooms';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
-  <BrowserRouter>
-    <FontStyles />
-    <GlobalStyle />
-    <Header />
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/listes-reservations" element={<Reservation />} />
-      <Route path="/creation-client" element={<CreateClient />} />
-      <Route path="/liste-clients" element={<ListClients />} />
-    </Routes>
-  </BrowserRouter>
+  <React.StrictMode>
+    <BrowserRouter>
+      <FontStyles />
+      <GlobalStyle />
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/listes-reservations" element={<Reservation />} />
+        <Route path="/creation-client" element={<CreateClient />} />
+        <Route path="/liste-clients" element={<ListClients />} />
+        <Route path="/creation-room" element={<CreateRoom />} />
+        <Route path="/liste-room" element={<ListRooms />} />
+      </Routes>
+    </BrowserRouter>
+  </React.StrictMode>
 );

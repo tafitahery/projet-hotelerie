@@ -29,8 +29,8 @@ const Header = () => {
       <StyledLink to="/listes-reservations">Listes des réservations</StyledLink>
       <StyledLink to="/creation-client">Création client</StyledLink>
       <StyledLink to="/liste-clients">Listes des clients</StyledLink>
-      <StyledLink to="#">Création chambre</StyledLink>
-      <StyledLink to="#">Listes des chambres</StyledLink>
+      <StyledLink to="/creation-room">Création chambre</StyledLink>
+      <StyledLink to="/liste-room">Listes des chambres</StyledLink>
     </StyledNav>
   );
 };

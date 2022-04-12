@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import colors from '../../utils/styles/colors';
+import DeleteClient from '../DeleteClient';
 
 const StyledLi = styled.li`
   list-style-type: none;
@@ -14,23 +15,12 @@ const StyledLi = styled.li`
 const StyledButton = styled.button`
   font-size: 1.2rem;
   border-radius: 5px;
+  color: ${colors.primary};
   &: hover {
     cursor: pointer;
+    background-color: ${colors.primary};
+    color: ${colors.third};
   }
-  ${(props) =>
-    props.edit &&
-    `color: ${colors.primary};
-        &: hover {
-          background-color: ${colors.primary};
-          color: ${colors.third}
-        }`}
-  ${(props) =>
-    props.del &&
-    `color: red;
-        &: hover {
-          background-color: red;
-          color: ${colors.third}
-        }`}
 `;
 
 const ShowClient = ({ client }) => {
@@ -44,7 +34,7 @@ const ShowClient = ({ client }) => {
         <span>{client.telephone}</span>
         <span>
           <StyledButton edit>Editer</StyledButton>{' '}
-          <StyledButton del>Supprimer</StyledButton>
+          <DeleteClient id={client.id} />
         </span>
       </StyledLi>
     </div>

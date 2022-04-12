@@ -7,14 +7,6 @@
       "adresse": "Tana",
       "cin": "118331024984",
       "telephone": "0345267580"
-    },
-    {
-      "nom": "HERINANTENAINA",
-      "prenom": "Tafita",
-      "adresse": "67HA",
-      "cin": "122333244900",
-      "telephone": "0234577688",
-      "id": 2
     }
   ],
   "chambres": [
@@ -27,11 +19,6 @@
       "numero": "2",
       "prix": "75000",
       "id": 2
-    },
-    {
-      "numero": "3",
-      "prix": "100000",
-      "id": 3
     }
   ]
 }

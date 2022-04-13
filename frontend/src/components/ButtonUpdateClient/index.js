@@ -17,11 +17,15 @@ const StyledButton = styled.button`
 const ButtonUpdateClient = ({ client }) => {
   let navigate = useNavigate();
 
-  const routeChange = () => {
-    let path = '/update-client';
+  const routeChange = (client) => {
+    let path = '/update-client/' + client;
     navigate(path);
   };
-  return <StyledButton onClick={routeChange}>Editer</StyledButton>;
+  return (
+    <StyledButton onClick={() => routeChange(JSON.stringify(client))}>
+      Editer
+    </StyledButton>
+  );
 };
 
 export default ButtonUpdateClient;

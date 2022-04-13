@@ -27,7 +27,7 @@ root.render(
         <Route path="/liste-clients" element={<ListClients />} />
         <Route path="/creation-room" element={<CreateRoom />} />
         <Route path="/liste-room" element={<ListRooms />} />
-        <Route path="/update-client" element={<UpdateClient />} />
+        <Route path="/update-client/:client" element={<UpdateClient />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

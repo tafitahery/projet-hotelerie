@@ -1,6 +1,8 @@
-import React from 'react';
+import { useParams } from 'react-router-dom';
 
-const UpdateClient = ({ client }) => {
+const UpdateClient = () => {
+  const client = useParams();
+
   return (
     <div className="container">
       <h1>Modification Client</h1>
@@ -32,7 +34,11 @@ const UpdateClient = ({ client }) => {
           </div>
 
           <div className="input">
-            <input type="submit" value="Valider" className="btn-valider" />
+            <input
+              type="submit"
+              value="Mettre à jour"
+              className="btn-valider"
+            />
           </div>
         </form>
 

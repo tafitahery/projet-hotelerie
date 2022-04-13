@@ -14,7 +14,7 @@ const StyledButton = styled.button`
   }
 `;
 
-const ButtonUpdateClient = () => {
+const ButtonUpdateClient = ({ client }) => {
   let navigate = useNavigate();
 
   const routeChange = () => {

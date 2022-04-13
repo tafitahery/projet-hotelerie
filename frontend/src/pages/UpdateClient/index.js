@@ -32,7 +32,9 @@ const UpdateClient = () => {
     navigate(path);
   };
 
-  const handleUpdate = () => {
+  const handleUpdate = (e) => {
+    e.preventDefault();
+
     axios.put('http://localhost:3003/clients/' + id, {
       nom: editedNom ? editedNom : client.nom,
       prenom: editedPrenom ? editedPrenom : client.prenom,
@@ -40,6 +42,7 @@ const UpdateClient = () => {
       cin: editedCin ? editedCin : client.cin,
       telephone: editedTelephone ? editedTelephone : client.telephone,
     });
+
     routeChange();
   };
 
@@ -47,7 +50,7 @@ const UpdateClient = () => {
     <div className="container">
       <h1>Modification Client</h1>
       <div className="sub">
-        <form>
+        <form onSubmit={(e) => handleUpdate(e)}>
           <div className="input">
             <label htmlFor="nom-client">Nom du client : </label>
             <input
@@ -104,7 +107,6 @@ const UpdateClient = () => {
               type="submit"
               value="Mettre à jour"
               className="btn-valider"
-              onClick={handleUpdate}
             />
           </div>
         </form>

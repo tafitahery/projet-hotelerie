@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import colors from '../../utils/styles/colors';
 import DeleteRoom from '../DeleteRoom';
+import EditRoom from '../EditRoom';
 
 const StyledLi = styled.li`
   list-style-type: none;
@@ -12,17 +13,6 @@ const StyledLi = styled.li`
   color: ${colors.secondary};
 `;
 
-const StyledButton = styled.button`
-  font-size: 1.2rem;
-  border-radius: 5px;
-  color: ${colors.primary};
-  &: hover {
-    cursor: pointer;
-    background-color: ${colors.primary};
-    color: ${colors.third};
-  }
-`;
-
 const ShowRooms = ({ room }) => {
   return (
     <div>
@@ -30,7 +20,7 @@ const ShowRooms = ({ room }) => {
         <span>{room.numero}</span>
         <span>{room.prix} Ar</span>
         <span>
-          <StyledButton>Editer</StyledButton> <DeleteRoom id={room.id} />
+          <EditRoom id={room.id} /> <DeleteRoom id={room.id} />
         </span>
       </StyledLi>
     </div>

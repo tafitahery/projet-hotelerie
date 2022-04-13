@@ -3,17 +3,17 @@
     {
       "nom": "HERINANTENAINA",
       "prenom": "Tafita",
-      "adresse": "67HA",
+      "adresse": "A/be",
       "cin": "122333244900",
-      "telephone": "0234577688",
+      "telephone": "0345267580",
       "id": 2
     },
     {
       "nom": "HERY",
-      "prenom": "Tafita Roger",
-      "adresse": "A/be",
-      "cin": "118331024984",
-      "telephone": "0345267580",
+      "prenom": "Tafita Lebo",
+      "adresse": "67HA",
+      "cin": "122333244900",
+      "telephone": "0234577688",
       "id": 3
     }
   ],
@@ -25,7 +25,7 @@
     },
     {
       "numero": "2",
-      "prix": "75000",
+      "prix": "100000",
       "id": 2
     }
   ]

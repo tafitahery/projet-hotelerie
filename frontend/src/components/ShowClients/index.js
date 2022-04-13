@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import colors from '../../utils/styles/colors';
-import ButtonUpdateClient from '../ButtonUpdateClient';
+import EditClient from '../EditClient';
 import DeleteClient from '../DeleteClient';
 
 const StyledLi = styled.li`
@@ -23,7 +23,7 @@ const ShowClient = ({ client }) => {
         <span>{client.cin}</span>
         <span>{client.telephone}</span>
         <span>
-          <ButtonUpdateClient client={client} /> <DeleteClient id={client.id} />
+          <EditClient id={client.id} /> <DeleteClient id={client.id} />
         </span>
       </StyledLi>
     </div>

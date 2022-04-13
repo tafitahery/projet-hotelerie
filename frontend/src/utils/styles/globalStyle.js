@@ -2,8 +2,9 @@ import { createGlobalStyle } from 'styled-components';
 import colors from './colors';
 
 const globalStyle = createGlobalStyle`
-  body {
+  * {
     font-family: 'font1';
+    color: ${colors.secondary};
   }
   .container {
     margin-top: 50px;

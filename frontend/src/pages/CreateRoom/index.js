@@ -51,7 +51,7 @@ const CreateRoom = () => {
             <input
               onChange={(e) => setPrix(e.target.value)}
               value={prix}
-              type="text"
+              type="number"
               id="prix-chamber"
               placeholder="Prix nuité"
             />

@@ -14,18 +14,14 @@ const StyledButton = styled.button`
   }
 `;
 
-const ButtonUpdateClient = ({ client }) => {
+const EditClient = ({ id }) => {
   let navigate = useNavigate();
 
-  const routeChange = (client) => {
-    let path = '/update-client/' + client;
+  const routeChange = (id) => {
+    let path = '/update-client/' + id;
     navigate(path);
   };
-  return (
-    <StyledButton onClick={() => routeChange(JSON.stringify(client))}>
-      Editer
-    </StyledButton>
-  );
+  return <StyledButton onClick={() => routeChange(id)}>Editer</StyledButton>;
 };
 
-export default ButtonUpdateClient;
+export default EditClient;

@@ -1,12 +1,20 @@
 {
   "clients": [
     {
-      "id": 1,
-      "nom": "HERY",
+      "nom": "HERINANTENAINA",
       "prenom": "Tafita",
-      "adresse": "Tana",
+      "adresse": "67HA",
+      "cin": "122333244900",
+      "telephone": "0234577688",
+      "id": 2
+    },
+    {
+      "nom": "HERY",
+      "prenom": "Tafita Roger",
+      "adresse": "A/be",
       "cin": "118331024984",
-      "telephone": "0345267580"
+      "telephone": "0345267580",
+      "id": 3
     }
   ],
   "chambres": [

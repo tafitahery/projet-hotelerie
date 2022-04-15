@@ -10,7 +10,7 @@
     },
     {
       "nom": "HERY",
-      "prenom": "Tafita Lebo",
+      "prenom": "Tafita",
       "adresse": "67HA",
       "cin": "122333244900",
       "telephone": "0234577688",
@@ -26,6 +26,22 @@
     {
       "numero": "2",
       "prix": "100000",
+      "id": 2
+    }
+  ],
+  "reservations": [
+    {
+      "id": 1,
+      "clientId": 0,
+      "chambreId": 0,
+      "entree": 0,
+      "sortie": 0
+    },
+    {
+      "clientId": "2",
+      "chambreId": "1",
+      "entree": "2022-04-14",
+      "sortie": "2022-04-16",
       "id": 2
     }
   ]

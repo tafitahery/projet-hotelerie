@@ -1,9 +1,16 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
   const [clients, setClients] = useState([]);
   const [rooms, setRooms] = useState([]);
+  const [clientId, setClientId] = useState(0);
+  const [roomId, setRoomId] = useState(0);
+  const [dateIn, setDateIn] = useState('');
+  const [dateOut, setDateOut] = useState('');
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     getClient();
@@ -15,15 +22,30 @@ const Home = () => {
       .get('http://localhost:3003/clients')
       .then((res) => setClients(res.data));
   };
+
   const getRooms = () => {
     axios
       .get('http://localhost:3003/chambres')
       .then((res) => setRooms(res.data));
   };
 
+  const routeChange = () => {
+    const path = '/facturation';
+
+    navigate(path);
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Validé');
+
+    axios.post('http://localhost:3003/reservations', {
+      clientId,
+      chambreId: roomId,
+      entree: dateIn,
+      sortie: dateOut,
+    });
+
+    routeChange();
   };
 
   return (
@@ -33,18 +55,29 @@ const Home = () => {
         <form onSubmit={(e) => handleSubmit(e)}>
           <div className="input">
             <label htmlFor="date_entree">Date entrée : </label>
-            <input type="date" id="date_entree" />
+            <input
+              onChange={(e) => setDateIn(e.target.value)}
+              type="date"
+              id="date_entree"
+            />
           </div>
           <div className="input">
-            <label htmlFor="date_sortie">Date sortied : </label>
-            <input type="date" id="date_sortie" />
+            <label htmlFor="date_sortie">Date sortie : </label>
+            <input
+              onChange={(e) => setDateOut(e.target.value)}
+              type="date"
+              id="date_sortie"
+            />
           </div>
           <div className="input">
             <label htmlFor="nom_client">Nom du Client : </label>
-            <select id="nom_client">
+            <select
+              onChange={(e) => setClientId(e.target.value)}
+              id="nom_client"
+            >
               <option value=""> --- </option>
               {clients.map((client) => (
-                <option key={client.id} value={client}>
+                <option key={client.id} value={client.id}>
                   {client.nom} {client.prenom}
                 </option>
               ))}
@@ -52,10 +85,13 @@ const Home = () => {
           </div>
           <div className="input">
             <label htmlFor="nom_chambre">Chambre : </label>
-            <select id="nom_chambre">
+            <select
+              onChange={(e) => setRoomId(e.target.value)}
+              id="nom_chambre"
+            >
               <option value=""> --- </option>
               {rooms.map((room) => (
-                <option key={room.id} value={room}>
+                <option key={room.id} value={room.id}>
                   {room.numero}
                 </option>
               ))}

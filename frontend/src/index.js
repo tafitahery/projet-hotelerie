@@ -12,6 +12,7 @@ import CreateRoom from './pages/CreateRoom';
 import ListRooms from './pages/ListRooms';
 import UpdateClient from './pages/UpdateClient';
 import UpdateRoom from './pages/UpdateRoom';
+import Facturation from './pages/Facturation';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -30,6 +31,7 @@ root.render(
         <Route path="/liste-room" element={<ListRooms />} />
         <Route path="/update-client/:id" element={<UpdateClient />} />
         <Route path="/update-room/:id" element={<UpdateRoom />} />
+        <Route path="/facturation" element={<Facturation />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

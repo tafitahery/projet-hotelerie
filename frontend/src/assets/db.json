@@ -43,6 +43,20 @@
       "entree": "2022-04-14",
       "sortie": "2022-04-16",
       "id": 2
+    },
+    {
+      "clientId": "2",
+      "chambreId": "1",
+      "entree": "2022-04-15",
+      "sortie": "2022-04-16",
+      "id": 3
+    },
+    {
+      "clientId": "3",
+      "chambreId": "2",
+      "entree": "2022-04-20",
+      "sortie": "2022-04-22",
+      "id": 4
     }
   ]
 }

@@ -5,7 +5,7 @@ const StyledUl = styled.ul`
   margin-top: 70px;
 `;
 
-const ShowReservation = ({ reservations, clients, rooms }) => {
+const InfoReservation = ({ reservations, clients, rooms }) => {
   const reservation = reservations.reduce(
     (acc, elt) => (Math.max(elt.id) ? (acc = elt) : acc),
     {}
@@ -37,4 +37,4 @@ const ShowReservation = ({ reservations, clients, rooms }) => {
   );
 };
 
-export default ShowReservation;
+export default InfoReservation;

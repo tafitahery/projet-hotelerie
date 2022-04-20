@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import ShowReservation from '../../components/ShowReservation';
+import InfoReservation from '../../components/InfoReservation';
 
 const Home = () => {
   const [clients, setClients] = useState([]);
@@ -39,7 +39,7 @@ const Home = () => {
   };
 
   const routeChange = () => {
-    const path = '/facturation';
+    const path = '/listes-reservations';
 
     navigate(path);
   };
@@ -119,7 +119,7 @@ const Home = () => {
 
         <div className="informations">
           <h2>Dernier enregistrement</h2>
-          <ShowReservation
+          <InfoReservation
             reservations={reservations}
             clients={clients}
             rooms={rooms}

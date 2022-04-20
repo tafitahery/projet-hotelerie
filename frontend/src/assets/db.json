@@ -15,6 +15,14 @@
       "cin": "122333244900",
       "telephone": "0234577688",
       "id": 3
+    },
+    {
+      "nom": "GATES",
+      "prenom": "Bill",
+      "adresse": "NY",
+      "cin": "0987654321",
+      "telephone": "07866538",
+      "id": 4
     }
   ],
   "chambres": [
@@ -27,6 +35,11 @@
       "numero": "2",
       "prix": "100000",
       "id": 2
+    },
+    {
+      "numero": "3",
+      "prix": "75000",
+      "id": 3
     }
   ],
   "reservations": [
@@ -57,6 +70,13 @@
       "entree": "2022-04-20",
       "sortie": "2022-04-22",
       "id": 4
+    },
+    {
+      "clientId": "4",
+      "chambreId": "3",
+      "entree": "2022-04-23",
+      "sortie": "2022-04-28",
+      "id": 5
     }
   ]
 }

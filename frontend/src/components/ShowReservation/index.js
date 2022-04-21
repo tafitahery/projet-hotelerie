@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import colors from '../../utils/styles/colors';
+import EditReservation from '../EditReservation';
 
 const StyledLi = styled.li`
   list-style-type: none;
@@ -35,7 +36,7 @@ const ShowReservation = ({ reservation, clients, rooms }) => {
       <span>{reservation.entree}</span>
       <span>{reservation.sortie}</span>
       <span>
-        <button>Editer</button> <button>Supprimer</button>{' '}
+        <EditReservation id={reservation.id} /> <button>Supprimer</button>{' '}
         <button>Facturer</button>
       </span>
     </StyledLi>

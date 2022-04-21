@@ -44,13 +44,6 @@
   ],
   "reservations": [
     {
-      "id": 1,
-      "clientId": 0,
-      "chambreId": 0,
-      "entree": 0,
-      "sortie": 0
-    },
-    {
       "clientId": "2",
       "chambreId": "1",
       "entree": "2022-04-14",

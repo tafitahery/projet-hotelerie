@@ -7,7 +7,7 @@ import colors from '../../utils/styles/colors';
 const StyledLi = styled.li`
   list-style-type: none;
   display: grid;
-  grid-template-columns: 20% 20% 20% 20% 20%;
+  grid-template-columns: 15% 14% 14% 14% 14% 14% 15%;
   margin: 10px 0;
   font-size: 1.3rem;
   color: ${colors.primary};
@@ -49,10 +49,12 @@ const Reservation = () => {
       <h1>Listes des réservations</h1>
       <ul>
         <StyledLi>
-          <span>Nom et Prénom</span>
-          <span>Numero chambre</span>
+          <span>Client</span>
+          <span>Chambre</span>
           <span>Date entrée</span>
           <span>Date sortie</span>
+          <span>Sejour</span>
+          <span>Prix</span>
           <span>Action</span>
         </StyledLi>
         {reservations.map((reservation) => (

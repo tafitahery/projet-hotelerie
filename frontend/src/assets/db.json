@@ -44,32 +44,25 @@
   ],
   "reservations": [
     {
-      "clientId": "2",
-      "chambreId": "1",
-      "entree": "2022-04-14",
-      "sortie": "2022-04-16",
+      "clientId": "3",
+      "chambreId": "2",
+      "entree": "2022-04-23",
+      "sortie": "2022-04-24",
+      "id": 1
+    },
+    {
+      "clientId": "4",
+      "chambreId": "2",
+      "entree": "2022-04-23",
+      "sortie": "2022-04-26",
       "id": 2
     },
     {
       "clientId": "2",
       "chambreId": "1",
-      "entree": "2022-04-15",
-      "sortie": "2022-04-16",
-      "id": 3
-    },
-    {
-      "clientId": "3",
-      "chambreId": "2",
       "entree": "2022-04-20",
-      "sortie": "2022-04-22",
-      "id": 4
-    },
-    {
-      "clientId": "4",
-      "chambreId": "3",
-      "entree": "2022-04-23",
       "sortie": "2022-04-28",
-      "id": 5
+      "id": 3
     }
   ]
 }

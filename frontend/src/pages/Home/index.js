@@ -7,10 +7,10 @@ const Home = () => {
   const [clients, setClients] = useState([]);
   const [rooms, setRooms] = useState([]);
   const [reservations, setReservations] = useState([]);
-  const [clientId, setClientId] = useState(0);
-  const [roomId, setRoomId] = useState(0);
-  const [dateIn, setDateIn] = useState('');
-  const [dateOut, setDateOut] = useState('');
+  const [clientId, setClientId] = useState('');
+  const [roomId, setRoomId] = useState('');
+  const [dateIn, setDateIn] = useState();
+  const [dateOut, setDateOut] = useState();
 
   const navigate = useNavigate();
 

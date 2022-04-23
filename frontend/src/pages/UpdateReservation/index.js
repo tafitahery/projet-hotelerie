@@ -1,6 +1,10 @@
 import React from 'react';
+import { useParams } from 'react-router-dom';
+import axios from 'axios';
 
 const UpdateReservation = () => {
+  const { id } = useParams();
+
   return (
     <div className="container">
       <h1>Réservation</h1>

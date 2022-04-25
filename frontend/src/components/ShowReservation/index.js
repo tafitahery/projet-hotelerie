@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import colors from '../../utils/styles/colors';
 import EditReservation from '../EditReservation';
+import axios from 'axios';
 
 const StyledLi = styled.li`
   list-style-type: none;
@@ -12,11 +13,13 @@ const StyledLi = styled.li`
   color: ${colors.secondary};
 `;
 
-const ShowReservation = ({ reservation, clients, rooms }) => {
-  const [client, setClient] = useState({});
+const ShowReservation = ({ reservation }) => {
+  const [client, setClient] = useState([]);
+  const [room, setRoom] = useState([]);
 
   useEffect(() => {
     getClient();
+    getRoom();
   }, []);
 
   const calculDate = () => {
@@ -27,35 +30,32 @@ const ShowReservation = ({ reservation, clients, rooms }) => {
     );
   };
 
-  const calculatePrice = () => {};
+  const calculatePrice = () => {
+    return String(calculDate() * room.prix);
+  };
 
   const getClient = () => {
-    for (const client of clients) {
-      if (parseInt(reservation.clientId) === client.id) {
-        setClient(client);
-      }
-    }
+    axios
+      .get('http://localhost:3003/clients?id=' + reservation.clientId)
+      .then((res) => setClient(res.data[0]));
   };
 
   const getRoom = () => {
-    for (const room of rooms) {
-      if (parseInt(reservation.chambreId) === room.id) {
-        return room.numero;
-      }
-    }
+    axios
+      .get('http://localhost:3003/chambres?id=' + reservation.chambreId)
+      .then((res) => setRoom(res.data[0]));
   };
 
   return (
     <StyledLi>
       <span>
-        {client.nom} <br />
-        {client.prenom}
+        {client.prenom} <br /> {client.nom}
       </span>
-      <span>{getRoom()}</span>
+      <span>{room.numero}</span>
       <span>{reservation.entree}</span>
       <span>{reservation.sortie}</span>
       <span>{calculDate()}</span>
-      <span></span>
+      <span>{calculatePrice()}</span>
       <span>
         <EditReservation id={reservation.id} /> <button>Supprimer</button>{' '}
         <br />

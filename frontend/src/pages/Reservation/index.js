@@ -17,13 +17,9 @@ const StyledLi = styled.li`
 
 const Reservation = () => {
   const [reservations, setReservations] = useState([]);
-  const [clients, setClients] = useState([]);
-  const [rooms, setRooms] = useState([]);
 
   useEffect(() => {
     getReservations();
-    getClients();
-    getRooms();
   }, []);
 
   const getReservations = () => {
@@ -31,19 +27,6 @@ const Reservation = () => {
       .get('http://localhost:3003/reservations')
       .then((res) => setReservations(res.data));
   };
-
-  const getClients = () => {
-    axios
-      .get('http://localhost:3003/clients')
-      .then((res) => setClients(res.data));
-  };
-
-  const getRooms = () => {
-    axios
-      .get('http://localhost:3003/chambres')
-      .then((res) => setRooms(res.data));
-  };
-
   return (
     <div className="container">
       <h1>Listes des réservations</h1>
@@ -58,12 +41,7 @@ const Reservation = () => {
           <span>Action</span>
         </StyledLi>
         {reservations.map((reservation) => (
-          <ShowReservation
-            key={reservation.id}
-            reservation={reservation}
-            clients={clients}
-            rooms={rooms}
-          />
+          <ShowReservation key={reservation.id} reservation={reservation} />
         ))}
       </ul>
     </div>

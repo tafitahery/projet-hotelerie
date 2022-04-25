@@ -1,9 +1,20 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 
 const UpdateReservation = () => {
   const { id } = useParams();
+  const [reservation, setReservation] = useState([]);
+
+  useEffect(() => {
+    getReservation();
+  }, []);
+
+  const getReservation = () => {
+    axios
+      .get('http://localhost:3003/reservations?id=' + id)
+      .then((res) => setReservation(res.data[0]));
+  };
 
   return (
     <div className="container">
@@ -12,11 +23,21 @@ const UpdateReservation = () => {
         <form>
           <div className="input">
             <label htmlFor="date_entree">Date entrée : </label>
-            <input type="date" id="date_entree" required />
+            <input
+              defaultValue={reservation.entree}
+              type="date"
+              id="date_entree"
+              required
+            />
           </div>
           <div className="input">
             <label htmlFor="date_sortie">Date sortie : </label>
-            <input type="date" id="date_sortie" required />
+            <input
+              defaultValue={reservation.sortie}
+              type="date"
+              id="date_sortie"
+              required
+            />
           </div>
           <div className="input">
             <label htmlFor="nom_client">Nom du Client : </label>

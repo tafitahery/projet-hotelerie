@@ -3,6 +3,14 @@ const mongoose = require('mongoose');
 
 const app = express();
 
+mongoose
+  .connect('mongodb://localhost:27017/hotel', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then(() => console.log('MongoDB connected'))
+  .catch((error) => console.log('Error Connexion : ' + error));
+
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader(

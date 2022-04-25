@@ -1,6 +1,8 @@
 const express = require('express');
 const mongoose = require('mongoose');
 
+const clientRoutes = require('./routes/client');
+
 const app = express();
 
 mongoose
@@ -23,5 +25,7 @@ app.use((req, res, next) => {
   );
   next();
 });
+
+app.use('/api/client', clientRoutes);
 
 module.exports = app;

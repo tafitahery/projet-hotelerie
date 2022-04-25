@@ -5,6 +5,7 @@ const reservationSchema = mongoose.Schema({
   clientId: { type: String, required: true },
   entree: { type: String, required: true },
   sortie: { type: String, required: true },
+  date: { type: Date, default: Date.now },
 });
 
 module.exports = mongoose.model('Reservation', reservationSchema);

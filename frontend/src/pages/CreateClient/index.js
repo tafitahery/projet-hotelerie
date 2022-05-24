@@ -23,7 +23,7 @@ const CreateClient = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post('http://localhost:3003/clients', {
+      .post('http://localhost:5500/api/client', {
         nom,
         prenom,
         adresse,

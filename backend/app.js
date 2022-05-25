@@ -2,6 +2,7 @@ const express = require('express');
 const { default: mongoose } = require('mongoose');
 
 const clientRoutes = require('./routes/client');
+const roomRoutes = require('./routes/room');
 
 mongoose
   .connect('mongodb://localhost:27017/hotel', {
@@ -29,5 +30,6 @@ app.use((req, res, next) => {
 });
 
 app.use('/api/clients', clientRoutes);
+app.use('/api/rooms', roomRoutes);
 
 module.exports = app;

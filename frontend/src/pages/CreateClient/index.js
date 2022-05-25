@@ -4,38 +4,38 @@ import InfoClient from '../../components/InfoClient';
 
 const CreateClient = () => {
   const [client, setClients] = useState({});
-  const [nom, setNom] = useState('');
-  const [prenom, setPrenom] = useState('');
-  const [adresse, setAdresse] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [firstName, setFirstName] = useState('');
+  const [address, setAddress] = useState('');
   const [cin, setCin] = useState('');
-  const [telephone, setTelephone] = useState('');
+  const [phone, setPhone] = useState('');
 
   useEffect(() => {
     getClient();
-  }, [nom]);
+  }, [lastName]);
 
   const getClient = () => {
     axios
-      .get('http://localhost:3003/clients')
+      .get('http://localhost:4500/api/clients')
       .then((res) => setClients(res.data[res.data.length - 1]));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post('http://localhost:5500/api/client', {
-        nom,
-        prenom,
-        adresse,
+      .post('http://localhost:4500/api/clients', {
+        lastName,
+        firstName,
+        address,
         cin,
-        telephone,
+        phone,
       })
       .then(() => {
-        setNom('');
-        setPrenom('');
-        setAdresse('');
+        setLastName('');
+        setFirstName('');
+        setAddress('');
         setCin('');
-        setTelephone('');
+        setPhone('');
       });
   };
 
@@ -47,31 +47,31 @@ const CreateClient = () => {
           <div className="input">
             <label htmlFor="nom-client">Nom du client : </label>
             <input
-              onChange={(e) => setNom(e.target.value)}
+              onChange={(e) => setLastName(e.target.value)}
               type="text"
               id="nom-client"
               placeholder="Nom"
-              value={nom}
+              value={lastName}
             />
           </div>
           <div className="input">
             <label htmlFor="prenom-client">Prénom du client : </label>
             <input
-              onChange={(e) => setPrenom(e.target.value)}
+              onChange={(e) => setFirstName(e.target.value)}
               type="text"
               id="prenom-client"
               placeholder="Prénom"
-              value={prenom}
+              value={firstName}
             />
           </div>
           <div className="input">
             <label htmlFor="adresse-client">Adresse du client : </label>
             <input
-              onChange={(e) => setAdresse(e.target.value)}
+              onChange={(e) => setAddress(e.target.value)}
               type="text"
               id="adresse-client"
               placeholder="Adresse"
-              value={adresse}
+              value={address}
             />
           </div>
           <div className="input">
@@ -87,11 +87,11 @@ const CreateClient = () => {
           <div className="input">
             <label htmlFor="phone-client">Téléphone du client : </label>
             <input
-              onChange={(e) => setTelephone(e.target.value)}
+              onChange={(e) => setPhone(e.target.value)}
               type="text"
               id="phone-client"
               placeholder="Numero de téléphone"
-              value={telephone}
+              value={phone}
             />
           </div>
 

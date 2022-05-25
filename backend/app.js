@@ -1,6 +1,8 @@
 const express = require('express');
 const { default: mongoose } = require('mongoose');
 
+const clientRoutes = require('./routes/client');
+
 mongoose
   .connect('mongodb://localhost:27017/hotel', {
     useNewUrlParser: true,
@@ -25,5 +27,7 @@ app.use((req, res, next) => {
   );
   next();
 });
+
+app.use('/api/clients', clientRoutes);
 
 module.exports = app;

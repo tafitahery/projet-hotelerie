@@ -17,11 +17,9 @@ const UpdateClient = () => {
   }, []);
 
   const getClient = () => {
-    axios.get('http://localhost:3003/clients').then((res) =>
+    axios.get('http://localhost:4500/api/clients').then((res) =>
       setClient(
-        res.data.reduce((acc, elt) =>
-          elt.id === parseInt(id) ? (acc = elt) : acc
-        ),
+        res.data.reduce((acc, elt) => (elt._id === id ? (acc = elt) : acc)),
         {}
       )
     );
@@ -35,12 +33,12 @@ const UpdateClient = () => {
   const handleUpdate = (e) => {
     e.preventDefault();
 
-    axios.put('http://localhost:3003/clients/' + id, {
-      nom: editedNom ? editedNom : client.nom,
-      prenom: editedPrenom ? editedPrenom : client.prenom,
-      adresse: editdeAdresse ? editdeAdresse : client.adresse,
+    axios.put('http://localhost:4500/api/clients/' + id, {
+      lastName: editedNom ? editedNom : client.lastName,
+      firstName: editedPrenom ? editedPrenom : client.firstName,
+      address: editdeAdresse ? editdeAdresse : client.address,
       cin: editedCin ? editedCin : client.cin,
-      telephone: editedTelephone ? editedTelephone : client.telephone,
+      phone: editedTelephone ? editedTelephone : client.phone,
     });
 
     routeChange();
@@ -57,7 +55,7 @@ const UpdateClient = () => {
               type="text"
               id="nom-client"
               placeholder="Nom"
-              defaultValue={client.nom}
+              defaultValue={client.lastName}
               onChange={(e) => setEditedNom(e.target.value)}
             />
           </div>
@@ -67,7 +65,7 @@ const UpdateClient = () => {
               type="text"
               id="prenom-client"
               placeholder="Prénom"
-              defaultValue={client.prenom}
+              defaultValue={client.firstName}
               onChange={(e) => setEditedPrenom(e.target.value)}
             />
           </div>
@@ -77,7 +75,7 @@ const UpdateClient = () => {
               type="text"
               id="adresse-client"
               placeholder="Adresse"
-              defaultValue={client.adresse}
+              defaultValue={client.address}
               onChange={(e) => setEditedAdresse(e.target.value)}
             />
           </div>
@@ -97,7 +95,7 @@ const UpdateClient = () => {
               type="text"
               id="phone-client"
               placeholder="Numero de téléphone"
-              defaultValue={client.telephone}
+              defaultValue={client.phone}
               onChange={(e) => setEditedTelephone(e.target.value)}
             />
           </div>

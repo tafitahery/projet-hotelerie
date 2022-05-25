@@ -17,7 +17,7 @@ const StyledButton = styled.button`
 const DeleteClient = ({ id }) => {
   const handleDelete = () => {
     if (window.confirm('Voulez vous supprimer le client ?')) {
-      axios.delete('http://localhost:3003/clients/' + id);
+      axios.delete('http://localhost:4500/api/clients/' + id);
       window.location.reload();
     }
   };

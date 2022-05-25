@@ -17,13 +17,13 @@ const ShowClient = ({ client }) => {
   return (
     <div>
       <StyledLi>
-        <span>{client.nom}</span>
-        <span>{client.prenom}</span>
-        <span>{client.adresse}</span>
+        <span>{client.lastName}</span>
+        <span>{client.firstName}</span>
+        <span>{client.address}</span>
         <span>{client.cin}</span>
-        <span>{client.telephone}</span>
+        <span>{client.phone}</span>
         <span>
-          <EditClient id={client.id} /> <DeleteClient id={client.id} />
+          <EditClient id={client._id} /> <DeleteClient id={client._id} />
         </span>
       </StyledLi>
     </div>

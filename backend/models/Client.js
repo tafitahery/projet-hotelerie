@@ -6,6 +6,7 @@ const clientShema = mongoose.Schema({
   address: { type: String, required: true },
   cin: { type: String, required: true },
   phone: { type: String, required: true },
+  date: { type: Date, default: Date.now() },
 });
 
 module.exports = mongoose.model('Client', clientShema);

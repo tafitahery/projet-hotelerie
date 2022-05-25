@@ -12,13 +12,21 @@ const StyledLi = styled.li`
 `;
 
 const InfoClient = ({ client }) => {
-  return (
+  return client ? (
     <StyledUl>
-      <StyledLi>Nom : {client.nom}</StyledLi>
-      <StyledLi>Prénom : {client.prenom}</StyledLi>
-      <StyledLi>Adresse : {client.adresse}</StyledLi>
+      <StyledLi>Nom : {client.lastName}</StyledLi>
+      <StyledLi>Prénom : {client.firstName}</StyledLi>
+      <StyledLi>Adresse : {client.address}</StyledLi>
       <StyledLi>CIN : {client.cin}</StyledLi>
-      <StyledLi>Téléphone : {client.telephone}</StyledLi>
+      <StyledLi>Téléphone : {client.phone}</StyledLi>
+    </StyledUl>
+  ) : (
+    <StyledUl>
+      <StyledLi>Nom : </StyledLi>
+      <StyledLi>Prénom : </StyledLi>
+      <StyledLi>Adresse : </StyledLi>
+      <StyledLi>CIN : </StyledLi>
+      <StyledLi>Téléphone : </StyledLi>
     </StyledUl>
   );
 };

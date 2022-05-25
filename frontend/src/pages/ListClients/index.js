@@ -41,7 +41,7 @@ const ListClients = () => {
           <span>Action</span>
         </StyledLi>
         {clients
-          .sort((a, b) => b.id - a.id)
+          .sort((a, b) => a.date - b.date)
           .map((client) => (
             <ShowClients key={client._id} client={client} />
           ))}

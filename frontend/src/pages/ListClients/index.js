@@ -24,7 +24,7 @@ const ListClients = () => {
 
   const getClient = () => {
     axios
-      .get('http://localhost:3003/clients')
+      .get('http://localhost:4500/api/clients')
       .then((res) => setClients(res.data));
   };
 
@@ -43,7 +43,7 @@ const ListClients = () => {
         {clients
           .sort((a, b) => b.id - a.id)
           .map((client) => (
-            <ShowClients key={client.id} client={client} />
+            <ShowClients key={client._id} client={client} />
           ))}
       </ul>
     </div>

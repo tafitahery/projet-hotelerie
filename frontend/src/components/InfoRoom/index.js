@@ -14,8 +14,8 @@ const StyledLi = styled.li`
 const InfoRoom = ({ room }) => {
   return (
     <StyledUl>
-      <StyledLi>Chambre numero {room.numero}</StyledLi>
-      <StyledLi>{room.prix} Ar / nuitée</StyledLi>
+      <StyledLi>Chambre numero {room.number}</StyledLi>
+      <StyledLi>{room.price} Ar / nuitée</StyledLi>
     </StyledUl>
   );
 };

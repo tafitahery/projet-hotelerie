@@ -17,10 +17,10 @@ const ShowRooms = ({ room }) => {
   return (
     <div>
       <StyledLi>
-        <span>{room.numero}</span>
-        <span>{room.prix} Ar</span>
+        <span>{room.number}</span>
+        <span>{room.price} Ar</span>
         <span>
-          <EditRoom id={room.id} /> <DeleteRoom id={room.id} />
+          <EditRoom id={room._id} /> <DeleteRoom id={room._id} />
         </span>
       </StyledLi>
     </div>

@@ -24,7 +24,7 @@ const ListRooms = () => {
 
   const getClient = () => {
     axios
-      .get('http://localhost:3003/chambres')
+      .get('http://localhost:4500/api/rooms')
       .then((res) => setRooms(res.data));
   };
 
@@ -38,9 +38,9 @@ const ListRooms = () => {
           <span>Action</span>
         </StyledLi>
         {rooms
-          .sort((a, b) => b.id - a.id)
+          .sort((a, b) => b.date - a.date)
           .map((room) => (
-            <ShowRooms key={room.id} room={room} />
+            <ShowRooms key={room._id} room={room} />
           ))}
       </ul>
     </div>

@@ -4,16 +4,16 @@ import InfoRoom from '../../components/InfoRoom';
 
 const CreateRoom = () => {
   const [room, setRoom] = useState({});
-  const [numero, setNumero] = useState('');
-  const [prix, setPrix] = useState(0);
+  const [number, setNumber] = useState('');
+  const [price, setPrice] = useState(0);
 
   useEffect(() => {
     getRooms();
-  }, [numero]);
+  }, [number]);
 
   const getRooms = () => {
     axios
-      .get('http://localhost:3003/chambres')
+      .get('http://localhost:4500/api/rooms')
       .then((res) => setRoom(res.data[res.data.length - 1]));
   };
 
@@ -21,13 +21,13 @@ const CreateRoom = () => {
     e.preventDefault();
 
     axios
-      .post('http://localhost:3003/chambres', {
-        numero,
-        prix,
+      .post('http://localhost:4500/api/rooms', {
+        number,
+        price,
       })
       .then(() => {
-        setNumero('');
-        setPrix(0);
+        setNumber('');
+        setPrice(0);
       });
   };
 
@@ -39,8 +39,8 @@ const CreateRoom = () => {
           <div className="input">
             <label htmlFor="num-chamber">Numero chambre : </label>
             <input
-              onChange={(e) => setNumero(e.target.value)}
-              value={numero}
+              onChange={(e) => setNumber(e.target.value)}
+              value={number}
               type="text"
               id="num-chamber"
               placeholder="Numero / nom chambre"
@@ -49,8 +49,8 @@ const CreateRoom = () => {
           <div className="input">
             <label htmlFor="prix-chamber">Prix nuitée : </label>
             <input
-              onChange={(e) => setPrix(e.target.value)}
-              value={prix}
+              onChange={(e) => setPrice(e.target.value)}
+              value={price}
               type="number"
               id="prix-chamber"
               placeholder="Prix nuité"

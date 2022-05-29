@@ -17,7 +17,7 @@ const StyledButton = styledComponents.button`
 const DeleteRoom = ({ id }) => {
   const handleDelete = () => {
     if (window.confirm('Voulez vous supprimer cette chambre ?')) {
-      axios.delete('http://localhost:3003/chambres/' + id);
+      axios.delete('http://localhost:4500/api/rooms/' + id);
       window.location.reload();
     }
   };

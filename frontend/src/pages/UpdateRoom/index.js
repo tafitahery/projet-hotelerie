@@ -14,11 +14,9 @@ const UpdateRoom = () => {
   }, []);
 
   const getRoom = () => {
-    axios.get('http://localhost:3003/chambres').then((res) =>
+    axios.get('http://localhost:4500/api/rooms').then((res) =>
       setRoom(
-        res.data.reduce((acc, elt) =>
-          elt.id === parseInt(id) ? (acc = elt) : acc
-        ),
+        res.data.reduce((acc, elt) => (elt._id === id ? (acc = elt) : acc)),
         {}
       )
     );
@@ -33,9 +31,9 @@ const UpdateRoom = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    axios.put('http://localhost:3003/chambres/' + id, {
-      numero: editedNumero ? editedNumero : room.numero,
-      prix: editedPrix ? editedPrix : room.prix,
+    axios.put('http://localhost:4500/api/rooms/' + id, {
+      number: editedNumero ? editedNumero : room.number,
+      price: editedPrix ? editedPrix : room.price,
     });
 
     routeChange();
@@ -49,7 +47,7 @@ const UpdateRoom = () => {
           <div className="input">
             <label htmlFor="num-chamber">Numero chambre : </label>
             <input
-              defaultValue={room.numero}
+              defaultValue={room.number}
               onChange={(e) => setEditedNumero(e.target.value)}
               type="text"
               id="num-chamber"
@@ -59,7 +57,7 @@ const UpdateRoom = () => {
           <div className="input">
             <label htmlFor="prix-chamber">Prix nuitée : </label>
             <input
-              defaultValue={room.prix}
+              defaultValue={room.price}
               onChange={(e) => setEditedPrix(e.target.value)}
               type="number"
               id="prix-chamber"
